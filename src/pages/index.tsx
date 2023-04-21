@@ -112,7 +112,7 @@ function AboutUs() {
         <Image src={image.src} width={512} height={512} alt={image.alt}/>
         <Image src={image.src} width={512} height={512} alt={image.alt}/>
       </div>
-      <div  className={classes.right}>
+      <div className={classes.right}>
         <h3>About Us</h3>
         <p>TAB NZ is deeply ingrained in New Zealand&#39;s culture. As New Zealand&#39;s sole betting agency, every dollar bet with TAB NZ contributes to fuelling the future of racing and sporting organisations across New Zealand.</p>
         <Button>
@@ -126,8 +126,20 @@ function AboutUs() {
 
 function SocialResponsibility() {
   return (
-    <section className={classes.section} id="social-responsibility">
-      Social Responsibility
+    <section className={joinClasses(classes.section, classes.socialResponsibility)} id="social-responsibility">
+      <div/><div/><div/>
+      <div>
+        <div className={classes.left}>
+          <span>TAB NZ takes our responsibility to minimise harm seriously. Whether it’s through our Safer Betting tools, our customer support, or proactive engagement, we go beyond the minimum standards to keep Kiwis safe when placing a bet.</span>
+          <span>*2021/22 season</span>
+        </div>
+        <div className={classes.right}>
+          <Button>
+            Learn more
+            <Arrow size={16}/>
+          </Button>
+        </div>
+      </div>
     </section>
   ) 
 }
