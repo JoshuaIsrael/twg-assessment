@@ -205,9 +205,48 @@ function Careers() {
 }
 
 function News() {
+  const availableReports = useMemo(() => {
+    return [
+      {
+        image: {
+          src: "/pages/news/image1.jpg",
+          alt: "",
+        },
+        title: "TAB NZ boosting odds of success for women's sport on International Women’s Day",
+        date: "8 March 2023"
+      },
+      {
+        image: {
+          src: "/pages/news/image2.jpg",
+          alt: "",
+        },
+        title: "TAB NZ Trading Performance Update",
+        date: "3 March 2023"
+      },
+    ]
+  }, [])
+
   return (
-    <section className={classes.section} id="news">
-      News
+    <section className={joinClasses(classes.section, classes.news)} id="news">
+      <div className={classes.top}>
+        <h4>Catch up on the latest news from TAB NZ</h4>
+        <Button>
+          Learn more
+          <Arrow size={16}/>
+        </Button>
+      </div>
+      <div className={classes.bottom}>
+        {
+          // TODO: Replace index with proper key generator
+          availableReports.map((report, index) => (
+            <div key={index} className={classes.report}>
+              <Image src={report.image.src} alt={report.image.alt} width={645} height={330}/>
+              <span>{report.date}</span>
+              <p>{report.title}</p>
+            </div>
+          ))
+        }
+      </div>
     </section>
   ) 
 }
