@@ -1,10 +1,15 @@
-export function getAllSectionIds(): string[] {
-  const sectionIds: string[] = [];
+import { Section } from "@/types";
+
+export function getAllSections(): Omit<Section, "label">[] {
+  const sectionIds: Omit<Section, "label">[] = [];
   const sections = document.getElementsByTagName('section');
   for (let i = 0; i < sections.length; i++) {
     const id = sections[i].getAttribute('id');
     if (id) {
-      sectionIds.push(id);
+      sectionIds.push({
+        id,
+        element: sections[i],
+      });
     }
   }
   return sectionIds;
@@ -16,6 +21,6 @@ export function snakeToTitle(snakeCase: string): string {
   return capitalizedWords.join(' ');
 }
 
-export function joinClasses(strings: string[]): string {
+export function joinClasses(...strings: string[]): string {
   return strings.join(' ');
 }

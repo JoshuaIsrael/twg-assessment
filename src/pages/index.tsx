@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { getAllSectionIds, joinClasses, snakeToTitle } from '@/utils/helpers'
+import { getAllSections, joinClasses, snakeToTitle } from '@/utils/helpers'
 import { Section } from '@/types';
 import { Arrow, Button, IconButton, Navbar } from '@/components';
 import classes from '@/styles/Home.module.scss'
@@ -25,9 +25,10 @@ export default function Home() {
   // Converts the sections in the DOM into data for the navbar
   const registerSections = () => {
     if(availableSections.length <= 0){
-      setAvailableSection(getAllSectionIds().map((foundSection) => ({
-        id: foundSection,
-        label: snakeToTitle(foundSection)
+      setAvailableSection(getAllSections().map((foundSection) => ({
+        id: foundSection.id,
+        label: snakeToTitle(foundSection.id),
+        element: foundSection.element,
       })));
     }
   }
@@ -58,21 +59,27 @@ function Hero() {
   // TODO: Replace with fetching image from the backend
   const images = useMemo(() => {
     return {
-      background: "/pages/hero/image.jpg",
-      filler: "/pages/hero/image.jpg",
+      background: {
+        src: "/pages/hero/image.jpg",
+        alt: "A man dunking a ball in the ring"
+      },
+      filler: {
+        src: "/pages/hero/image.jpg",
+        alt: "A man dunking a ball in the ring"
+      },
     }
   }, [])
 
   return (
-    <section className={joinClasses([classes.section, classes.hero])} id="/">
+    <section className={joinClasses(classes.section, classes.hero)} id="/">
       <div className={classes.background}>
-        <Image src={images.background} fill alt="A man dunking a ball in the ring"/>
+        <Image src={images.background.src} fill alt={images.background.alt}/>
         <div className={classes.overlay}/>
       </div>
       <h2 className={classes.message}>
         Fueling the future of<br/>
         <span className={classes.highlight}>
-          <Image src={images.background} width={512} height={512} alt="A man dunking a ball in the ring"/>
+          <Image src={images.filler.src} width={512} height={512} alt={images.filler.alt}/>
           sport
         </span>
         ,&nbsp;<span className={classes.item}>racing</span> and <span className={classes.item}>communities</span><br/>
@@ -90,9 +97,29 @@ function Hero() {
 }
 
 function AboutUs() {
+  // TODO: Replace with fetching image from the backend
+  const image = useMemo(() => {
+    return {
+      src: "/pages/aboutUs/image.jpg",
+      alt: "A man dunking a ball in the ring"
+    }
+  }, [])
+
   return (
-    <section className={classes.section} id="about-us">
-      About Us
+    <section className={joinClasses(classes.section, classes.aboutUs)} id="about-us">
+      <div className={classes.left}>
+        <div/>
+        <Image src={image.src} width={512} height={512} alt={image.alt}/>
+        <Image src={image.src} width={512} height={512} alt={image.alt}/>
+      </div>
+      <div  className={classes.right}>
+        <h3>About Us</h3>
+        <p>TAB NZ is deeply ingrained in New Zealand&#39;s culture. As New Zealand&#39;s sole betting agency, every dollar bet with TAB NZ contributes to fuelling the future of racing and sporting organisations across New Zealand.</p>
+        <Button>
+          Learn more
+          <Arrow size={16}/>
+        </Button>
+      </div>
     </section>
   ) 
 }
