@@ -130,7 +130,7 @@ function SocialResponsibility() {
       <div/><div/><div/>
       <div>
         <div className={classes.left}>
-          <span>TAB NZ takes our responsibility to minimise harm seriously. Whether it’s through our Safer Betting tools, our customer support, or proactive engagement, we go beyond the minimum standards to keep Kiwis safe when placing a bet.</span>
+          <p>TAB NZ takes our responsibility to minimise harm seriously. Whether it’s through our Safer Betting tools, our customer support, or proactive engagement, we go beyond the minimum standards to keep Kiwis safe when placing a bet.</p>
           <span>*2021/22 season</span>
         </div>
         <div className={classes.right}>
@@ -145,9 +145,61 @@ function SocialResponsibility() {
 }
 
 function Careers() {
+  const availableJobs = useMemo(() => {
+    return [
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+      { title: "Customer Service Representative", location: "Auckland, New zealand", days: 4},
+    ]
+  }, [])
+
   return (
-    <section className={classes.section} id="careers">
-      Careers
+    <section className={joinClasses(classes.section, classes.careers)} id="careers">
+      <div className={classes.top}>
+        <span>Join Us</span>
+        <div className={classes.divider}/>
+      </div>
+      <div className={classes.bottom}>
+        <div className={classes.left}>
+          <h3>Careers</h3>
+          <p>There&#39;s so much more to TAB NZ than meets the eye, so why not scratch the surface and find out more. Are you ready to join our team?</p>
+          <Button>
+            Learn more
+            <Arrow size={16}/>
+          </Button>
+        </div>
+        <div className={classes.right}>
+          {
+            // TODO: Replace index with proper key generator
+            availableJobs.map((job, index) => (
+              <div key={index} className={classes.card}>
+                <div>
+                  <div>Job Title</div>
+                  <div>{job.title}</div>
+                </div>
+                <div>
+                  <div>Location</div>
+                  <div>{job.location}</div>
+                </div>
+                <div>
+                  <div>Job posted {job.days} days ago</div>
+                  <Button>
+                    Learn more
+                    <Arrow size={16}/>
+                  </Button>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
     </section>
   ) 
 }

@@ -184,7 +184,7 @@
     .left {
       width: 100%;
 
-      span:first-of-type {
+      p {
         display: block;
         width: 637px;
         font-weight: 700;
@@ -193,7 +193,7 @@
         text-transform: uppercase;
       }
 
-      span:last-of-type {
+      span {
         width: 100%;
         height: 80%;
         display: flex;
@@ -210,6 +210,112 @@
       display: flex;
       align-items: flex-end;
       justify-content: flex-end;
+    }
+  }
+}
+
+.careers {
+  padding-left: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    span {
+      width: 5%;
+      font-family: 'Roboto';
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: -0.025em;
+      text-transform: uppercase;
+      color: #4B6290;
+    }
+    .divider {
+      top: -50%;
+      width: 95%;
+      height: 2px;
+      border-top: 1px dashed #9CADCB;
+    }
+  }
+
+  .bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+
+    .left {
+      width: 30%;
+
+      h3 {
+        margin-bottom: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 50px;
+        letter-spacing: -0.025em;
+        text-transform: uppercase;
+        color: #1A2A57;
+      }
+  
+      p {
+        margin-bottom: 2rem;
+        max-width: 425px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: -0.025em;
+        color: #1A2A57;
+      }
+    }
+
+    .right {
+      width: 70%;
+      display: flex;
+      overflow: auto;
+
+      .card {
+        width: 316px;
+        height: 428px;
+        margin-left: 1rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        border-radius: 20px;
+        background-color: #1A2A57;
+
+        & > div {
+          div:first-of-type {
+            margin-bottom: 1rem;
+            font-family: 'Roboto';
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.025em;
+            color: #9CADCB;
+          }
+          div:nth-of-type(2) {
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 20px;
+            letter-spacing: -0.025em;
+            text-transform: uppercase;
+            color: #F5F5F5;
+          }
+        }
+
+        & > div:last-of-type {
+          margin-top: auto;
+        }
+      }
     }
   }
 }
