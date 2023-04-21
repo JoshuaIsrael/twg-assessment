@@ -1,0 +1,33 @@
+.navbar {
+  display: flex;
+  background-color: transparent;
+  box-shadow: none;
+  position: fixed;
+  text-transform: uppercase;
+  
+  .logo {
+    color: #333;
+    cursor: pointer;
+  }
+
+  .navlinks {
+    display: flex;
+    align-items: center;
+    margin: 0 auto 0 25%;
+
+    .link {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      margin-left: 1rem;
+    
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  h3 {
+    color: #333;
+  }
+}
