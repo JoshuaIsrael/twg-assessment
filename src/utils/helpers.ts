@@ -15,3 +15,7 @@ export function snakeToTitle(snakeCase: string): string {
   const capitalizedWords = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1));
   return capitalizedWords.join(' ');
 }
+
+export function joinClasses(strings: string[]): string {
+  return strings.join(' ');
+}

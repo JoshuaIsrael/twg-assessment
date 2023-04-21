@@ -2,9 +2,69 @@
   .main {
     .section {
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
+  }
+}
+
+.hero {
+  padding: 0 2.5rem 0 6rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: #F5F5F5;
+
+  .background {
+    z-index: -1;
+    .overlay {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,1) 100%);
+      opacity: .7;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .message {
+    margin: auto 0 4% 0;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 100px;
+    line-height: 83.5%;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+
+    .highlight {
+      display: inline-block;
+      border-bottom: 0.25rem solid #B150C5;
+      color: #9CADCB;
+    }
+
+    .item {
+      display: inline-block;
+      border-bottom: 0.25rem solid #9CADCB;
+    }
+
+    img {
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 1rem;
+      margin-right: 0.8rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .actions {
+    width: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: space-between;
   }
 }

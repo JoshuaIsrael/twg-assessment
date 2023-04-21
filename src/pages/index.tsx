@@ -1,8 +1,9 @@
 import { useState, useMemo, useEffect } from 'react'
 import Head from 'next/head'
-import { getAllSectionIds, snakeToTitle } from '@/utils/helpers'
+import Image from 'next/image'
+import { getAllSectionIds, joinClasses, snakeToTitle } from '@/utils/helpers'
 import { Section } from '@/types';
-import Navbar from '@/components/NavBar';
+import { Arrow, Button, IconButton, Navbar } from '@/components';
 import classes from '@/styles/Home.module.scss'
 
 export default function Home() {
@@ -54,9 +55,36 @@ export default function Home() {
 }
 
 function Hero() {
+  // TODO: Replace with fetching image from the backend
+  const images = useMemo(() => {
+    return {
+      background: "/pages/hero/image.jpg",
+      filler: "/pages/hero/image.jpg",
+    }
+  }, [])
+
   return (
-    <section className={classes.section} id="/">
-      Hero
+    <section className={joinClasses([classes.section, classes.hero])} id="/">
+      <div className={classes.background}>
+        <Image src={images.background} fill alt="A man dunking a ball in the ring"/>
+        <div className={classes.overlay}/>
+      </div>
+      <h2 className={classes.message}>
+        Fueling the future of<br/>
+        <span className={classes.highlight}>
+          <Image src={images.background} width={512} height={512} alt="A man dunking a ball in the ring"/>
+          sport
+        </span>
+        ,&nbsp;<span className={classes.item}>racing</span> and <span className={classes.item}>communities</span><br/>
+        in New Zealand
+      </h2>
+      <div className={classes.actions}>
+        <IconButton><Arrow size={24} direction="down"/></IconButton>
+        <Button>
+          Learn more
+          <Arrow size={16}/>
+        </Button>
+      </div>
     </section>
   ) 
 }

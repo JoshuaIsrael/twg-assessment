@@ -1,6 +1,8 @@
 import { useMemo } from "react";
-import { AppBar, CssBaseline, Link, Toolbar, Typography } from "@mui/material";
+import { AppBar, Link, Toolbar } from "@mui/material";
 import { Section } from "@/types";
+import ExternalLink from "../SVGs/ExternalLink";
+import Logo from "../Logo";
 import classes from "./NavBar.module.scss"
 
 type NavBarProps = {
@@ -12,22 +14,22 @@ export default function Navbar({ sections }: NavBarProps ) {
 
   return (
     <AppBar className={classes.navbar} position="static">
-      <CssBaseline />
       <Toolbar>
-        <Typography variant="h4" className={classes.logo}>
-          Tab
-        </Typography>
+        <div className={classes.logo}>
+          <Logo/>
+        </div>
         <div className={classes.navlinks}>
           {
             sections.filter((section) => section.id !== "/").map((section) => (
-              <Link key={section.id} className={classes.link}>
+              <Link key={section.id}>
                 {section.label}
               </Link>
             ))
           }
         </div>
-        <Link className={classes.link}>
+        <Link>
           {externalLink.label}
+          <ExternalLink/>
         </Link>
       </Toolbar>
     </AppBar>
