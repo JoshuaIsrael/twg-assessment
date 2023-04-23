@@ -253,9 +253,32 @@ function News() {
 }
 
 function Grants() {
+  // TODO: Replace with fetching image from the backend
+  const { firstFiller, secondFiller } = useMemo(() => {
+    return {
+      firstFiller: {
+        src: "/pages/grants/img6.jpg",
+        alt: "A man running with a ball"
+      },
+      secondFiller: {
+        src: "/pages/grants/img7.jpg",
+        alt: "A woman waving her hands"
+      },
+    }
+  }, [])
+
   return (
-    <section className={classes.section} id="grants">
-      Grants
+    <section className={joinClasses(classes.section, classes.grants)} id="grants">
+      <h3>
+        Fuelling
+        <Image src={firstFiller.src} width={143} height={163} alt={firstFiller.alt}/>
+        The
+        <Image src={secondFiller.src} width={143} height={163} alt={secondFiller.alt}/>
+        Future
+      </h3>
+      <span>
+        of sport, racing and communities in New Zealand.
+      </span>
     </section>
   ) 
 }

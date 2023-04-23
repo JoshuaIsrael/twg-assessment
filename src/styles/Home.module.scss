@@ -381,3 +381,35 @@
     }
   }
 }
+
+.grants {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  h3 {
+    width: 1307px;
+    margin-bottom: 1rem;
+    font-size: 15rem;
+    text-transform: uppercase;
+    color: #1A2A57;
+    -webkit-text-stroke: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    img {
+      margin: 0 2rem;
+      border-radius: 20px;
+    }
+  }
+
+  span {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 20px;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: #1A2A57;
+  }
+}
