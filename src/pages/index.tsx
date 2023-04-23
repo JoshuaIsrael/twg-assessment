@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { getAllSections, joinClasses, snakeToTitle } from '@/utils/helpers'
 import { Section } from '@/types';
-import { Arrow, Button, IconButton, Navbar } from '@/components';
+import { Arrow, Button, Footer, IconButton, Navbar } from '@/components';
 import classes from '@/styles/Home.module.scss'
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
         id: foundSection.id,
         label: snakeToTitle(foundSection.id),
         element: foundSection.element,
-      })));
+      })).filter((section) => section.id !== "/"));
     }
   }
 
@@ -50,6 +50,7 @@ export default function Home() {
         <main className={classes.main}>
           {sections}
         </main>
+        <Footer sections={availableSections}/>
       </div>
     </>
   )

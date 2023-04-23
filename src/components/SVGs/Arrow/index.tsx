@@ -6,14 +6,15 @@ const colors = {
 }
 
 const directions = {
-  right: "0",
+  up: "-90",
   down: "90",
+  right: "0",
 }
 
 type ArrowProps = {
   size: number,
-  color: "light" | "dark"
-  direction: "right" | "down"
+  color: "light" | "dark",
+  direction: "up" | "down" | "right",
 }
 
 export default function Arrow({ size, color, direction }: ArrowProps) {

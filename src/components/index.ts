@@ -1,9 +1,10 @@
 import Arrow from "./SVGs/Arrow";
 import Button from "./Button";
-import IconButton from "./IconButton";
 import ExternalLink from "./SVGs/ExternalLink";
+import Footer from "./Footer";
+import IconButton from "./IconButton";
 import Navbar from "./NavBar";
 
 export {
-  Arrow, Button, ExternalLink, IconButton, Navbar
+  Arrow, Button, ExternalLink, Footer, IconButton, Navbar
 }

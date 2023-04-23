@@ -43,7 +43,7 @@ export default function Navbar({ sections }: NavBarProps ) {
         </div>
         <div className={joinClasses(classes.navlinks, lightSections.includes(activeSection) ? classes.alt : '')}>
           {
-            sections.filter((section) => section.id !== "/").map((section) => (
+            sections.map((section) => (
               <Link key={section.id} className="">
                 {section.label}
               </Link>
