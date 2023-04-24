@@ -18,7 +18,7 @@ export default function Home() {
       <Careers key="careers"/>,
       <News key="news"/>,
       <Grants key="grants"/>,
-      <Reports key="reports"/>,
+      <section key="reports" id="reports"/>,
     ]
   }, [])
 
@@ -269,24 +269,18 @@ function Grants() {
 
   return (
     <section className={joinClasses(classes.section, classes.grants)} id="grants">
-      <h3>
-        Fuelling
-        <Image src={firstFiller.src} width={143} height={163} alt={firstFiller.alt}/>
-        The
-        <Image src={secondFiller.src} width={143} height={163} alt={secondFiller.alt}/>
-        Future
-      </h3>
-      <span>
-        of sport, racing and communities in New Zealand.
-      </span>
+      <div>
+        <h3>
+          Fuelling
+          <Image src={firstFiller.src} width={143} height={163} alt={firstFiller.alt}/>
+          The
+          <Image src={secondFiller.src} width={143} height={163} alt={secondFiller.alt}/>
+          Future
+        </h3>
+        <span>
+          of sport, racing and communities in New Zealand.
+        </span>
+      </div>
     </section>
-  ) 
-}
-
-function Reports() {
-  return (
-    <section className={classes.section} id="reports">
-      Reports
-    </section>
-  ) 
+  )
 }
