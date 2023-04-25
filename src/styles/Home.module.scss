@@ -41,14 +41,17 @@
     text-transform: uppercase;
 
     .highlight {
-      display: inline-block;
       border-bottom: 0.25rem solid #B150C5;
       color: #9CADCB;
     }
 
     .item {
-      display: inline-block;
       border-bottom: 0.25rem solid #9CADCB;
+    }
+    
+    span {
+      display: inline-block;
+      margin-inline: 0.9rem;
     }
 
     img {

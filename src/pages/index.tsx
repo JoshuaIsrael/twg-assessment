@@ -18,6 +18,7 @@ export default function Home() {
       <Careers key="careers"/>,
       <News key="news"/>,
       <Grants key="grants"/>,
+      // TODO: Temporarily disable Reports tab
       <section key="reports" id="reports"/>,
     ]
   }, [])
@@ -58,14 +59,14 @@ export default function Home() {
 
 function Hero() {
   // TODO: Replace with fetching image from the backend
-  const images = useMemo(() => {
+  const { background, filler } = useMemo(() => {
     return {
       background: {
-        src: "/pages/hero/image.jpg",
+        src: "/pages/hero/background.png",
         alt: "A man dunking a ball in the ring"
       },
       filler: {
-        src: "/pages/hero/image.jpg",
+        src: "/pages/hero/background.png",
         alt: "A man dunking a ball in the ring"
       },
     }
@@ -74,16 +75,19 @@ function Hero() {
   return (
     <section className={joinClasses(classes.section, classes.hero)} id="/">
       <div className={classes.background}>
-        <Image src={images.background.src} fill alt={images.background.alt}/>
+        <Image src={background.src} fill alt={background.alt}/>
         <div className={classes.overlay}/>
       </div>
       <h2 className={classes.message}>
         Fueling the future of<br/>
         <span className={classes.highlight}>
-          <Image src={images.filler.src} width={512} height={512} alt={images.filler.alt}/>
+          <Image src={filler.src} width={512} height={512} alt={filler.alt}/>
           sport
         </span>
-        ,&nbsp;<span className={classes.item}>racing</span> and <span className={classes.item}>communities</span><br/>
+        ,
+        <span className={classes.item}>racing</span>
+        and
+        <span className={classes.item}>communities</span><br/>
         in New Zealand
       </h2>
       <div className={classes.actions}>
