@@ -372,12 +372,20 @@
       }
 
       p {
+        width: 435px  ;
         font-weight: 700;
         font-size: 24px;
         line-height: 20px;
         text-transform: uppercase;
         color: #FFFFFF;
       }
+
+      & > div {
+        width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between
+      };
     }
   }
 }

@@ -243,7 +243,10 @@ function News() {
             <div key={index} className={classes.report}>
               <Image src={report.image.src} alt={report.image.alt} width={645} height={330}/>
               <span>{report.date}</span>
-              <p>{report.title}</p>
+              <div>
+                <p>{report.title}</p>
+                <IconButton><Arrow color="light"/></IconButton>
+              </div>
             </div>
           ))
         }
